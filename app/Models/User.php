@@ -12,6 +12,11 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    public function posts(){
+        return $this->hasMany(Post::class); // hasMany() es una función de Eloquent que nos permite definir una relación de uno a muchos
+        //Cada posts pertenece a muchos con la misma relacion
+    }
+
     /**
      * The attributes that are mass assignable.
      *
